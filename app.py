@@ -1,5 +1,4 @@
 import json
-import matplotlib.pyplot as plt
 from pathlib import Path
 import streamlit as st
 from openai import OpenAI
