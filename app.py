@@ -138,7 +138,7 @@ def load_current_conversation():
         conversation_id = 1
         conversation = {
             "id": conversation_id,
-            "name": "Sokrates 1",
+            "name": "Runiewski 1",
             "chatbot_personality": DEFAULT_PERSONALITY,
             "messages": [],
             "tags": []
@@ -235,7 +235,7 @@ def create_new_conversation():
 
     conversation = {
         "id": conversation_id,
-        "name": f"Sokrates {conversation_id}",
+        "name": f"Runiewski {conversation_id}",
         "chatbot_personality": personality,
         "messages": [],
         "tags": []
@@ -350,6 +350,19 @@ def set_theme():
         color: var(--chat-message-text);
     }
     :root {
+        --main-bg: #121212;
+        --main-text: #E0E0E0;
+        --sidebar-bg: #1E1E1E;
+        --sidebar-text: #E0E0E0;
+        --button-bg: #BB86FC;
+        --button-text: #000000;
+        --input-bg: #1E1E1E;
+        --input-text: #E0E0E0;
+        --chat-bg: #121212;
+        --chat-message-bg: #1E1E1E;
+        --chat-message-text: #E0E0E0;
+    }
+    [data-theme="light"] {
         --main-bg: #f0f2f6;
         --main-text: #31333F;
         --sidebar-bg: #ffffff;
@@ -362,24 +375,11 @@ def set_theme():
         --chat-message-bg: #ffffff;
         --chat-message-text: #31333F;
     }
-    [data-theme="dark"] {
-        --main-bg: #0E1117;
-        --main-text: #FAFAFA;
-        --sidebar-bg: #262730;
-        --sidebar-text: #FAFAFA;
-        --button-bg: #4169E1;
-        --button-text: white;
-        --input-bg: #262730;
-        --input-text: #FAFAFA;
-        --chat-bg: #0E1117;
-        --chat-message-bg: #262730;
-        --chat-message-text: #FAFAFA;
-    }
     </style>
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const theme = localStorage.getItem('theme') || 'light';
+        const theme = localStorage.getItem('theme') || 'dark';  // Domyślnie ciemny motyw
         document.documentElement.setAttribute('data-theme', theme);
         
         const themeToggle = document.getElementById('theme-toggle');
@@ -496,7 +496,7 @@ load_current_conversation()
 st.markdown(
     """
     <div style="text-align: center; font-size: 62px; font-weight: bold;">
-        🏛️ SOKRATES 🏛️
+        🏛️ Runiewski Mistrzu 🏛️
     </div>
     """,
     unsafe_allow_html=True
